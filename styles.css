@@ -1,0 +1,313 @@
+:root {
+    --primary-color: #6a0dad;
+    --secondary-color: #ff7b00;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --background-light: #ffffff;
+    --background-dark: #2c2c2c;
+    --section-light: #f9f9f9;
+    --section-alt-light: #ececec;
+    --section-dark: #3c3c3c;
+    --section-alt-dark: #2c2c2c;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 6px 20px rgba(0, 0, 0, 0.2);
+    --transition: 0.3s ease;
+}
+
+.dark-theme {
+    --background-light: var(--background-dark);
+    --text-dark: var(--text-light);
+    --section-light: var(--section-dark);
+    --section-alt-light: var(--section-alt-dark);
+    --primary-color: #8a2be2;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.responsive-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+header {
+    background-color: #0b091d;
+    color: var(--text-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-soft);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.theme-button {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+
+.theme-card {
+  background-color: var(--section-light);
+  color: var(--text-dark);
+  /* varsa border da eklenebilir */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+
+body.dark-theme .theme-card {
+  background-color: var(--section-dark);
+  color: var(--text-light);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.theme-button:hover {
+    background: #e66700;
+    transform: scale(1.05);
+}
+
+.section {
+    padding: 4rem 0;
+    background: var(--section-light);
+    transition: background-color var(--transition);
+}
+
+.section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.section p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background: var(--section-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+}
+
+.hero-section {
+    background: url('hero-image.jpg') center/cover no-repeat;
+    text-align: center;
+    color: var(--text-dark);
+    padding: 5rem 1rem;
+    position: relative;
+    margin-top: 60px;
+}
+
+.hero-section::before {
+    content: "";
+    background: url('https://preview.redd.it/here-are-some-wallpapaer-i-made-fell-free-to-share-ideas-of-v0-7buzb5xztqhb1.png?width=640&crop=smart&auto=webp&s=58a2f1d72fb5cd016d68e74bcb6b2c35b95bb000') center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-button {
+    margin-top: 2rem;
+}
+
+.button {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.button:hover {
+    background-color: #4b0082;
+    transform: scale(1.05);
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.social-media a {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+
+
+    .theme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .theme-card {
+      background-color: var(--section-bg-color, #fff);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .theme-card:hover {
+      transform: scale(1.02);
+    }
+
+    .theme-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .theme-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .theme-card .button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--download-button-bg-color, #6a0dad);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .theme-card .button:hover {
+      background-color: var(--download-button-hover-color, #4b0082);
+    }
+
+    
